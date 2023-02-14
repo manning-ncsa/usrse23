@@ -1,8 +1,7 @@
 FROM jekyll/jekyll
 
-COPY Gemfile .
-COPY Gemfile.lock .
+COPY ./ ./
 
-RUN bundle install --quiet --clean
+RUN bundle install
 
-CMD ["jekyll", "serve"]
+CMD ["bundle", "exec", "jekyll", "serve"]
